@@ -8,6 +8,8 @@ const nextConfig = {
   output: "export",
 
   images: {
+    unoptimized: true, // ✅ IMPORTANT for Netlify + next export
+
     remotePatterns: [
       { protocol: "https", hostname: "cdn5.f-cdn.com" },
       { protocol: "https", hostname: "cdn3.f-cdn.com" },
