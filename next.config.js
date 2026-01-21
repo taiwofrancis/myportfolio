@@ -1,54 +1,27 @@
 import withBundleAnalyzer from "@next/bundle-analyzer";
+import type { NextConfig } from "next";
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
-const nextConfig = {
-  output: "export", // ✅ STATIC EXPORT (creates /out folder)
+const nextConfig: NextConfig = {
+  output: "export", // ✅ STATIC EXPORT (/out)
 
-  // Image optimization
   images: {
-    domains: [
-      "cdn5.f-cdn.com", // Fiverr.com CDN
-      "cdn3.f-cdn.com",
-      "images.unsplash.com", // Unsplash for project images
-      "user-images.githubusercontent.com", // GitHub user content
+    remotePatterns: [
+      { protocol: "https", hostname: "cdn5.f-cdn.com" },
+      { protocol: "https", hostname: "cdn3.f-cdn.com" },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "user-images.githubusercontent.com" },
     ],
-    formats: ["image/webp", "image/avif"], // Modern formats for better compression
+    formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
-  // Performance optimizations
   poweredByHeader: false,
-
-  // Enable compression
   compress: true,
-
-  // Headers for better caching
-  async headers() {
-    return [
-      {
-        source: "/_next/static/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        source: "/images/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-    ];
-  },
 };
 
 export default bundleAnalyzer(nextConfig);
