@@ -27,7 +27,7 @@ const trustElements = [
         name: "Cloud & DevOps Engineering",
         icon: Cloud,
         description:
-            "Deploy applications using Docker, CI/CD pipelines, AWS, IBM Cloud, Vercel, and cloud-native tools to ensure reliable, fast, and scalable production deployments.",
+            "Deploy applications using Docker, VPS, CI/CD pipelines, AWS, IBM Cloud, Vercel, and cloud-native tools to ensure reliable, fast, and scalable production deployments.",
         color: "text-cyan-400",
         bgColor: "bg-cyan-400/10",
         borderColor: "border-cyan-400/20",

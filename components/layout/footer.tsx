@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Send } from "lucide-react";
 
 // Minimal custom Freelancer logo (origami-style bird) in single color to match icon set
 const XLogo = ({ className }: { className?: string }) => (
@@ -44,10 +44,10 @@ export function Footer() {
               <Link href="/projects" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                 Projects
               </Link>
-              <Link href="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                 About
               </Link>
-              <Link href="/experience" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                 Experience
               </Link>
               <Link href="/contact" className="text-sm text-muted-foreground hover:text-accent transition-colors">
@@ -76,6 +76,12 @@ export function Footer() {
                 <Link href="https://x.com/TaiwoFrancisOg" target="_blank" rel="noopener noreferrer">
                   <XLogo className="h-4 w-4" />
                   <span className="sr-only">X</span>
+                </Link>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <Link href="https://www.t.me/@francismih" target="_blank" rel="noopener noreferrer">
+                  <Send className="h-4 w-4" />
+                  <span className="sr-only">Telegram</span>
                 </Link>
               </Button>
             </div>

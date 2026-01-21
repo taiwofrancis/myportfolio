@@ -12,7 +12,6 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-// ❌ Removed all metadata
 
 export default function RootLayout({
   children,

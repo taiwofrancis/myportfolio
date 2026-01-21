@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star, Quote, Verified, Clock, Briefcase } from "lucide-react";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 // Testimonials data now uses the real reviews you provided.
@@ -88,7 +88,14 @@ export function Testimonials() {
                             What My Clients Say
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                            Real feedback from clients on Fiverr.com who achieved remarkable results.
+                            Real feedback from clients on <a
+                                href="https://www.fiverr.com/bscmaster"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-green-500 font-semibold hover:underline"
+                            >
+                                Fiverr.com
+                            </a> who achieved remarkable results.
                         </p>
                     </div>
                 </motion.div>
@@ -123,7 +130,7 @@ export function Testimonials() {
                                                 ))}
                                             </div>
                                         </div>
-                                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                                        <p className="text-sm text-muted-foreground">{testimonial.project}</p>
                                         <p className="text-xs text-muted-foreground mt-1">{testimonial.country}</p>
                                     </div>
                                 </CardHeader>
@@ -163,13 +170,13 @@ export function Testimonials() {
                         ))}
                     </div>
                 </motion.div>
-            </div>
+            </div >
 
             {/* Background Elements */}
-            <div className="absolute inset-0 -z-10 overflow-hidden">
+            < div className="absolute inset-0 -z-10 overflow-hidden" >
                 <div className="absolute top-1/3 -right-32 w-64 h-64 bg-gradient-to-l from-accent/5 to-transparent rounded-full blur-3xl" />
                 <div className="absolute bottom-1/3 -left-32 w-64 h-64 bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-3xl" />
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }
